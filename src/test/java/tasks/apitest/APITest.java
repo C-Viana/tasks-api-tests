@@ -8,7 +8,6 @@ import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 
 public class APITest {
-	
 	@BeforeClass
 	public static void beforeAll() {
 		RestAssured.baseURI = "http://localhost:8901/tasks-backend";
@@ -50,5 +49,4 @@ public class APITest {
 				.statusCode(400)
 				.body("message", CoreMatchers.is("Due date must not be in past"));
 	}
-	
 }
